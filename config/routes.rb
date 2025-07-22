@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get "mypage/show"
+  
+  devise_for :users
+  resources :mypage, only: [:show] # ユーザ情報の詳細表示
+  
   root to: "homes#top"
   resources :products
   
